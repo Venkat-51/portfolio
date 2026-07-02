@@ -152,7 +152,7 @@ export const DATA = {
       links: [
         {
           type: "Website",
-          href: "https://sellerrocket-venkateswaran-77sc-m1g6ipzz9.vercel.app/",
+          href: "https://sellerrocket-venkateswaran.vercel.app/",
           icon: <Icons.globe className="size-3" />,
         },
         {
