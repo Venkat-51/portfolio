@@ -17,6 +17,7 @@ const BLUR_FADE_DELAY = 0.04;
 export default function Page() {
   return (
     <main className="min-h-dvh flex flex-col gap-14 relative">
+      <meta name="google-site-verification" content="Rzn42okWNc1v5ACAaFYina86_t6EPsaL1baMAyHIiA0" />
       <section id="hero">
         <div className="mx-auto w-full max-w-2xl space-y-8">
           <div className="gap-4 gap-y-6 flex flex-col md:flex-row justify-between">
