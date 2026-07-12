@@ -168,6 +168,40 @@ export const DATA = {
         "/Seller Rocket/message.png",
       ],
     },
+     {
+      title: "SuperMarket App – Online Grocery Shopping & Order Management System",
+      href: "https://super-market-app-neon.vercel.app/",
+      dates: "Jun 2026 - July 2026",
+      active: true,
+      description:
+        "The SuperMarket App is a full-stack web application that enables customers to browse grocery products, search by category, add items to a shopping cart, and place orders through a modern, responsive interface. The application provides a smooth shopping experience with real-time cart management, order processing, and secure REST API communication between the frontend and backend. It is designed with a mobile-friendly UI while maintaining an optimized desktop experience.",
+      technologies: [
+        "TypeScript, .NET (ASP.NET Core Web API), SQL Server, Git & GitHub, Vercel (Frontend), Render (Backend)"
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://super-market-app-neon.vercel.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "Source",
+          href: "https://github.com/Venkat-51/SuperMarketApp",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      images: [
+        "/Supermarket img/1.png",
+        "/Supermarket img/2.png",
+        "/Supermarket img/3.png",
+        "/Supermarket img/4.png",
+        "/Supermarket img/5.png",
+        "/Supermarket img/6.png",
+        "/Supermarket img/7.png",
+        "/Supermarket img/8.png",
+        "/Supermarket img/9.png",
+      ],
+    },
     {
       title: "Service Booking & Appointment System",
       href: "https://service-booking-frontend-gamma.vercel.app/",
