@@ -35,7 +35,7 @@ export default function ContactSection() {
             <Mail className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0" />
             <div className="text-left">
               <p className="text-xs text-muted-foreground font-medium uppercase tracking-wide">Email</p>
-              <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors break-all">{DATA.contact.email}</p>
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors whitespace-nowrap">{DATA.contact.email}</p>
             </div>
           </Link>
           <Link
