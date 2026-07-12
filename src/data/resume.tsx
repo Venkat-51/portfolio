@@ -28,9 +28,9 @@ export const DATA = {
   location: "Thanjavur, TamilNadu, India",
   locationLink: "https://www.google.com/maps/place/thanjavur",
   description:
-    "Software Developer | Java Backend Developer | Full Stack Developer — Building scalable web applications using Java, Spring Boot, React, Python, and SQL. Open to Full-Time Software Developer Opportunities",
+    "Full Stack Web Developer | Java, Spring Boot & React | Python (Django) — Building scalable, real-world web applications with clean, efficient code — from backend APIs to responsive interfaces. Open to Full-Time Full Stack Web Developer Opportunities",
   summary:
-    "I am a Computer Science graduate passionate about building scalable software solutions using Java, Spring Boot, React, and Python. I enjoy solving real-world problems by developing clean, efficient, and user-focused applications. My goal is to contribute to innovative products while continuously learning modern technologies and software engineering best practices.",
+    "I'm a Full Stack Developer and Computer Science and Engineering graduate, passionate about building scalable software solutions using Java, Spring Boot, React, and Python. I enjoy solving real-world problems through clean, efficient, and user-focused applications — from backend REST APIs to responsive front-end interfaces — and my goal is to contribute to innovative products while continuously learning modern technologies and software engineering best practices.",
   avatarUrl: "/my.png",
   skills: [
     { name: "Java", icon: Java },
@@ -152,7 +152,7 @@ export const DATA = {
       links: [
         {
           type: "Website",
-          href: "https://sellerrocket-venkateswaran-77sc-m1g6ipzz9.vercel.app/",
+          href: "https://sellerrocket-venkateswaran.vercel.app/",
           icon: <Icons.globe className="size-3" />,
         },
         {
@@ -166,6 +166,40 @@ export const DATA = {
         "/Seller Rocket/service.png",
         "/Seller Rocket/contact.png",
         "/Seller Rocket/message.png",
+      ],
+    },
+     {
+      title: "SuperMarket App – Online Grocery Shopping & Order Management System",
+      href: "https://super-market-app-neon.vercel.app/",
+      dates: "Jun 2026 - July 2026",
+      active: true,
+      description:
+        "The SuperMarket App is a full-stack web application that enables customers to browse grocery products, search by category, add items to a shopping cart, and place orders through a modern, responsive interface. The application provides a smooth shopping experience with real-time cart management, order processing, and secure REST API communication between the frontend and backend. It is designed with a mobile-friendly UI while maintaining an optimized desktop experience.",
+      technologies: [
+        "TypeScript, .NET (ASP.NET Core Web API), SQL Server, Git & GitHub, Vercel (Frontend), Render (Backend)"
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://super-market-app-neon.vercel.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "Source",
+          href: "https://github.com/Venkat-51/SuperMarketApp",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      images: [
+        "/Supermarket img/1.png",
+        "/Supermarket img/2.png",
+        "/Supermarket img/3.png",
+        "/Supermarket img/4.png",
+        "/Supermarket img/5.png",
+        "/Supermarket img/6.png",
+        "/Supermarket img/7.png",
+        "/Supermarket img/8.png",
+        "/Supermarket img/9.png",
       ],
     },
     {
