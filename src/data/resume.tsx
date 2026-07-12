@@ -168,7 +168,7 @@ export const DATA = {
         "/Seller Rocket/message.png",
       ],
     },
-     {
+    {
       title: "SuperMarket App – Online Grocery Shopping & Order Management System",
       href: "https://super-market-app-neon.vercel.app/",
       dates: "Jun 2026 - July 2026",
@@ -350,7 +350,7 @@ export const DATA = {
         "Implemented CRUD operations and database integration.",
         "Gained hands-on experience in enterprise application development.",
       ],
-      certificateUrl: "https://drive.google.com/file/d/1d_xS2m8-uacWaXe6YQ4TAslUkWd6vshu/view?usp=sharing",
+      certificateUrl: "/certificates/springboot-digisailor.jpg",
     },
     {
       company: "Nexgen Innovator Solutions",
@@ -365,7 +365,7 @@ export const DATA = {
         "Worked with HTML, CSS, JavaScript, SQLite, and Django ORM.",
         "Improved backend development and full-stack development skills.",
       ],
-      certificateUrl: "https://drive.google.com/file/d/1DOW8VmHDIdH95py3R0mdI_vS2t_Qx_XN/view?usp=sharing",
+      certificateUrl: "/certificates/django-nexgen.jpg",
     },
   ],
   certifications: [
@@ -373,37 +373,38 @@ export const DATA = {
       title: "Artificial Intelligence Fundamentals",
       issuer: "IBM SkillBuild",
       date: "February 2026",
-      credentialUrl: "https://drive.google.com/file/d/1mG4SCm3Qi72L2PMMoOyv7Lb18Ts2TkY4/view?usp=sharing",
+      credentialUrl: "/certificates/ai-fundamentals-ibm.jpg",
     },
     {
       title: "SQL Fundamentals",
       issuer: "WsCube Tech",
       date: "August 2025",
-      credentialUrl: "https://drive.google.com/file/d/191TvEEGOO3S5QJD7LuXqJd0pXt2DmyZN/view?usp=sharing",
+      credentialUrl: "/certificates/sql-wscubetech.jpg",
     },
     {
       title: "Employability Skills Development Programme",
       issuer: "TITAN LeAP",
       date: "2025–2026",
-      credentialUrl: "https://drive.google.com/file/d/1d1T9K9HnizxJUz8KAWFcfAz6vH5roc1P/view?usp=sharing",
+      credentialUrl: "/certificates/titan-leap.jpg",
     },
     {
       title: "Techlaum Kalakkuvom – Kalloori Kalai Thiruvizha",
       issuer: "University College of Engineering, Kancheepuram (Anna University)",
       date: "2025-26",
-      credentialUrl: "https://drive.google.com/file/d/1qkV5J3VFIk5P-rHrPpcmfks4wids8Nph/view?usp=sharing",
+      credentialUrl: "/certificates/kalloori-kalai.jpg",
     },
+
     {
       title: "Data Analytics",
       issuer: "Pantech Solutions",
       date: "Dec 2022 – Jan 2023",
-      credentialUrl: "https://drive.google.com/file/d/1ytBBlqy6IssxpDhGUMzQ1mCuf4zE-JuP/view?usp=sharing",
+      credentialUrl: "/certificates/data-analytics-pantech.jpg",
     },
     {
       title: "Field Technician – Computer Peripherals",
       issuer: "NSDC",
       date: "March 2020",
-      credentialUrl: "https://drive.google.com/file/d/1065L8IiHC5XSfqSSHt0iHCu6WWsjKFpS/view?usp=sharing",
+      credentialUrl: "/certificates/field-technician-nsdc.jpg",
     },
   ],
   achievements: [

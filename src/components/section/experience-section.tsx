@@ -1,10 +1,23 @@
+"use client";
+
+import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
-import Link from "next/link";
 import { DATA } from "@/data/resume";
 import { Timeline, TimelineItem, TimelineConnectItem } from "@/components/timeline";
-import { Briefcase, Award } from "lucide-react";
+import { Award } from "lucide-react";
+import { CertificateModal } from "@/components/ui/certificate-modal";
 
 export default function ExperienceSection() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalUrl, setModalUrl] = useState("");
+  const [modalTitle, setModalTitle] = useState("");
+
+  const handleOpenModal = (url: string, title: string) => {
+    setModalUrl(url);
+    setModalTitle(title);
+    setIsModalOpen(true);
+  };
+
   return (
     <section id="experience" className="overflow-hidden">
       <div className="flex min-h-0 flex-col gap-y-8 w-full">
@@ -56,16 +69,15 @@ export default function ExperienceSection() {
                 )}
                 {work.certificateUrl && (
                   <div className="mt-2">
-                    <Link
-                      href={work.certificateUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <button
+                      onClick={() => handleOpenModal(work.certificateUrl!, `${work.company} Certificate`)}
+                      className="cursor-pointer focus:outline-hidden"
                     >
                       <Badge className="flex items-center gap-1.5 text-xs bg-primary text-primary-foreground w-fit hover:bg-primary/80 cursor-pointer">
                         <Award className="size-3" />
                         View Certificate
                       </Badge>
-                    </Link>
+                    </button>
                   </div>
                 )}
               </div>
@@ -73,6 +85,14 @@ export default function ExperienceSection() {
           ))}
         </Timeline>
       </div>
+
+      <CertificateModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        url={modalUrl}
+        title={modalTitle}
+        layout="portrait"
+      />
     </section>
   );
 }

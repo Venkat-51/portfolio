@@ -1,12 +1,24 @@
-import { Badge } from "@/components/ui/badge";
-import Link from "next/link";
+"use client";
+
+import { useState } from "react";
 import { DATA } from "@/data/resume";
 import { Award, Calendar, ExternalLink } from "lucide-react";
 import BlurFade from "@/components/magicui/blur-fade";
+import { CertificateModal } from "@/components/ui/certificate-modal";
 
 const BLUR_FADE_DELAY = 0.04;
 
 export default function CertificationsSection() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalUrl, setModalUrl] = useState("");
+  const [modalTitle, setModalTitle] = useState("");
+
+  const handleOpenModal = (url: string, title: string) => {
+    setModalUrl(url);
+    setModalTitle(title);
+    setIsModalOpen(true);
+  };
+
   return (
     <section id="certifications">
       <div className="flex min-h-0 flex-col gap-y-8 w-full">
@@ -55,21 +67,27 @@ export default function CertificationsSection() {
                 </div>
 
                 <div className="mt-4 pt-3 border-t border-border/55 flex justify-end">
-                  <Link
-                    href={cert.credentialUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-xs font-semibold text-primary hover:underline"
+                  <button
+                    onClick={() => handleOpenModal(cert.credentialUrl, cert.title)}
+                    className="inline-flex items-center gap-1 text-xs font-semibold text-primary hover:underline cursor-pointer focus:outline-hidden"
                   >
                     View Credential
                     <ExternalLink className="h-3 w-3" />
-                  </Link>
+                  </button>
                 </div>
               </div>
             </BlurFade>
           ))}
         </div>
       </div>
+
+      <CertificateModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        url={modalUrl}
+        title={modalTitle}
+        layout="landscape"
+      />
     </section>
   );
 }

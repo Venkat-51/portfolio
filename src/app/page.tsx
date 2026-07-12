@@ -10,7 +10,8 @@ import ProjectsSection from "@/components/section/projects-section";
 import ExperienceSection from "@/components/section/experience-section";
 import CertificationsSection from "@/components/section/certifications-section";
 import AchievementsSection from "@/components/section/achievements-section";
-import { ArrowUpRight, Download, Eye } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import { ResumeButtons } from "@/components/resume-buttons";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -52,25 +53,7 @@ export default function Page() {
               />
               {/* Resume Buttons */}
               <BlurFade delay={BLUR_FADE_DELAY * 5}>
-                <div className="flex items-center gap-3 mt-2">
-                  <a
-                    href="/Venkateswaran_Resume.pdf"
-                    download
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold bg-primary text-primary-foreground hover:bg-primary/90 active:scale-95 transition-all duration-200 shadow-sm"
-                  >
-                    <Download className="h-4 w-4" />
-                    Download Resume
-                  </a>
-                  <a
-                    href="/Venkateswaran_Resume.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold border border-border bg-background hover:bg-muted hover:border-primary/50 active:scale-95 transition-all duration-200"
-                  >
-                    <Eye className="h-4 w-4" />
-                    Preview
-                  </a>
-                </div>
+                <ResumeButtons />
               </BlurFade>
             </div>
             <BlurFade delay={BLUR_FADE_DELAY} className="order-1 md:order-2">

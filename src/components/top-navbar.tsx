@@ -2,8 +2,9 @@
 
 import { useState, useEffect, useRef } from "react";
 import { Download, Eye } from "lucide-react";
+import { CertificateModal } from "@/components/ui/certificate-modal";
 
-const RESUME_URL = "Venkateswaran_Resume.pdf";
+const RESUME_URL = "/Venkateswaran_FSD_Resume.jpg";
 
 const NAV_LINKS = [
   { label: "Home", href: "#hero" },
@@ -21,6 +22,7 @@ const SECTION_IDS = NAV_LINKS.map((l) => l.href.replace("#", ""));
 export default function TopNavbar() {
   const [active, setActive] = useState("hero");
   const [scrolled, setScrolled] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Refs for mobile auto-scroll
   const mobileScrollRef = useRef<HTMLDivElement>(null);
@@ -73,11 +75,10 @@ export default function TopNavbar() {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        scrolled
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled
           ? "bg-background/80 backdrop-blur-xl border-b border-border shadow-sm"
           : "bg-transparent"
-      }`}
+        }`}
     >
       {/* ── Top bar ── */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
@@ -98,11 +99,10 @@ export default function TopNavbar() {
               <button
                 key={href}
                 onClick={() => handleClick(href)}
-                className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 ${
-                  isActive
+                className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 ${isActive
                     ? "bg-primary text-primary-foreground"
                     : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                }`}
+                  }`}
               >
                 {label}
               </button>
@@ -120,23 +120,20 @@ export default function TopNavbar() {
             <Download className="h-3.5 w-3.5" />
             <span className="hidden sm:inline">Download</span>
           </a>
-          <a
-            href={RESUME_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium border border-border bg-background hover:bg-muted hover:border-primary/50 active:scale-95 transition-all duration-200"
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium border border-border bg-background hover:bg-muted hover:border-primary/50 active:scale-95 transition-all duration-200 cursor-pointer"
           >
             <Eye className="h-3.5 w-3.5" />
             <span className="hidden sm:inline">Preview</span>
-          </a>
+          </button>
         </div>
       </div>
 
       {/* ── Mobile horizontal scroll nav (auto-scrolls active pill to center) ── */}
       <div
-        className={`md:hidden border-t border-border/50 transition-all duration-300 ${
-          scrolled ? "bg-background/80 backdrop-blur-xl" : "bg-transparent"
-        }`}
+        className={`md:hidden border-t border-border/50 transition-all duration-300 ${scrolled ? "bg-background/80 backdrop-blur-xl" : "bg-transparent"
+          }`}
       >
         <div
           ref={mobileScrollRef}
@@ -150,11 +147,10 @@ export default function TopNavbar() {
                 key={href}
                 ref={(el) => { buttonRefs.current[id] = el; }}
                 onClick={() => handleClick(href)}
-                className={`shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 whitespace-nowrap ${
-                  isActive
+                className={`shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 whitespace-nowrap ${isActive
                     ? "bg-primary text-primary-foreground"
                     : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                }`}
+                  }`}
               >
                 {label}
               </button>
@@ -162,6 +158,13 @@ export default function TopNavbar() {
           })}
         </div>
       </div>
+
+      <CertificateModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        url={RESUME_URL}
+        title="Resume Preview"
+      />
     </header>
   );
 }
