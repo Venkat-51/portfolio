@@ -30,7 +30,7 @@ export const DATA = {
   description:
     "Full Stack Web Developer | Java, Spring Boot & React | Python (Django) — Building scalable, real-world web applications with clean, efficient code — from backend APIs to responsive interfaces. Open to Full-Time Full Stack Web Developer Opportunities",
   summary:
-    "I am a Computer Science graduate passionate about building scalable software solutions using Java, Spring Boot, React, and Python. I enjoy solving real-world problems by developing clean, efficient, and user-focused applications. My goal is to contribute to innovative products while continuously learning modern technologies and software engineering best practices.",
+    "I'm a Full Stack Developer and Computer Science and Engineering graduate, passionate about building scalable software solutions using Java, Spring Boot, React, and Python. I enjoy solving real-world problems through clean, efficient, and user-focused applications — from backend REST APIs to responsive front-end interfaces — and my goal is to contribute to innovative products while continuously learning modern technologies and software engineering best practices.",
   avatarUrl: "/my.png",
   skills: [
     { name: "Java", icon: Java },
