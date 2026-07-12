@@ -267,7 +267,7 @@ export const DATA = {
       description:
         "An AI-powered predictive maintenance platform that analyzes vehicle sensor and maintenance data to predict potential failures. The system automatically schedules service appointments, notifies users, and helps reduce unexpected vehicle breakdowns through preventive maintenance.",
       technologies: [
-        "React", "Python (FastAPI)", "AI/ML", "MQTT", "SQLite",
+        "Multi-Agent Systems", "React", "Java Authentication", "Python (FastAPI)", "AI/ML", "MQTT", "SQLite",
       ],
       links: [
         {
