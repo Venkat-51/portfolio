@@ -25,7 +25,7 @@ export default function ContactSection() {
           Get in Touch
         </h2>
         <p className="mx-auto max-w-lg text-muted-foreground text-balance">
-          I am currently seeking full-time opportunities as a Software Developer, Java Developer, or Full Stack Developer. As a recent Computer Science graduate, I am eager to contribute, learn, and grow with a dynamic team. If you have a suitable opportunity, I'd be happy to connect.
+          I am currently seeking full-time opportunities as a Full Stack Developer, with a focus on Java/Spring Boot and modern frontend technologies. As a recent Computer Science graduate, I am eager to contribute, learn, and grow with a dynamic team. If you have a suitable opportunity, I'd be happy to connect.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 mt-2 w-full max-w-md justify-center">
           <Link
