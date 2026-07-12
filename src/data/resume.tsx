@@ -176,7 +176,7 @@ export const DATA = {
       description:
         "A full-stack grocery shopping app where customers browse products, add items to cart, and place orders through a clean, responsive interface. Features real-time cart management, order processing, and secure REST API communication between frontend and backend.",
       technologies: [
-        "TypeScript", ".NET (ASP.NET Core Web API)", "SQL Server", "Git & GitHub", "Vercel (Frontend)", "Render (Backend)",
+        "TypeScript", ".NET (ASP.NET Core Web API)", "SQL Server", "Docker", "Git & GitHub", "Vercel (Frontend)", "Render (Backend)",
       ],
       links: [
         {
