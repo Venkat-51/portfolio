@@ -34,7 +34,7 @@ export default function Page() {
                 delay={BLUR_FADE_DELAY * 2}
                 className="text-base font-semibold text-foreground/80 sm:text-lg lg:text-xl tracking-tight"
                 yOffset={8}
-                text="Full Stack Web Developer | Java, Spring Boot & React | Python (Django)"
+                text="Full Stack Web Developer | Java, Spring Boot & React | Python (Django) | 2026 Graduate"
               />
               {/* Line 3: Tagline */}
               <BlurFadeText
