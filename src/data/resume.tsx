@@ -401,10 +401,11 @@ export const DATA = {
     },
   ],
   achievements: [
-    "Built 4+ Full Stack Projects",
+    "Built 5+ Full Stack Projects",
     "Completed 5+ Professional Certifications",
     "BE Computer Science Graduate",
     "Active Open Source & GitHub Contributor",
     "Built and deployed multiple web applications",
+    "Participated in Odoo and Naan Mudhalavan Hackathons",
   ],
 } as const;
