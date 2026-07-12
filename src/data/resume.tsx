@@ -174,9 +174,9 @@ export const DATA = {
       dates: "Jun 2026 - July 2026",
       active: true,
       description:
-        "The SuperMarket App is a full-stack web application that enables customers to browse grocery products, search by category, add items to a shopping cart, and place orders through a modern, responsive interface. The application provides a smooth shopping experience with real-time cart management, order processing, and secure REST API communication between the frontend and backend. It is designed with a mobile-friendly UI while maintaining an optimized desktop experience.",
+        "A full-stack grocery shopping app where customers browse products, add items to cart, and place orders through a clean, responsive interface. Features real-time cart management, order processing, and secure REST API communication between frontend and backend.",
       technologies: [
-        "TypeScript, .NET (ASP.NET Core Web API), SQL Server, Git & GitHub, Vercel (Frontend), Render (Backend)"
+        "TypeScript", ".NET (ASP.NET Core Web API)", "SQL Server", "Git & GitHub", "Vercel (Frontend)", "Render (Backend)",
       ],
       links: [
         {
