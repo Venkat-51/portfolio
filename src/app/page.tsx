@@ -34,21 +34,21 @@ export default function Page() {
                 delay={BLUR_FADE_DELAY * 2}
                 className="text-base font-semibold text-foreground/80 sm:text-lg lg:text-xl tracking-tight"
                 yOffset={8}
-                text="Software Developer | Java Backend Developer | Full Stack Developer"
+                text="Full Stack Web Developer | Java, Spring Boot & React | Python (Django)"
               />
               {/* Line 3: Tagline */}
               <BlurFadeText
                 delay={BLUR_FADE_DELAY * 3}
                 className="text-sm text-muted-foreground sm:text-base lg:text-lg max-w-[560px]"
                 yOffset={8}
-                text="Building scalable web applications with Java, Spring Boot, React, Python, and SQL."
+                text="Building scalable, real-world web applications with clean, efficient code — from backend APIs to responsive interfaces."
               />
               {/* Line 4: CTA */}
               <BlurFadeText
                 delay={BLUR_FADE_DELAY * 4}
                 className="text-sm font-medium text-primary sm:text-base"
                 yOffset={8}
-                text="Open to Full-Time Software Developer Opportunities."
+                text="Open to Full-Time Full-Stack Web Developer Opportunities"
               />
               {/* Resume Buttons */}
               <BlurFade delay={BLUR_FADE_DELAY * 5}>
