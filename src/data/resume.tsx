@@ -388,6 +388,12 @@ export const DATA = {
       credentialUrl: "https://drive.google.com/file/d/1d1T9K9HnizxJUz8KAWFcfAz6vH5roc1P/view?usp=sharing",
     },
     {
+      title: "Techlaum Kalakkuvom – Kalloori Kalai Thiruvizha",
+      issuer: "University College of Engineering, Kancheepuram (Anna University)",
+      date: "2025-26",
+      credentialUrl: "https://drive.google.com/drive/folders/1A2MS8y1WMlpb5I5j1H3OYti4yeWwWDCt",
+    },
+    {
       title: "Data Analytics",
       issuer: "Pantech Solutions",
       date: "Dec 2022 – Jan 2023",
