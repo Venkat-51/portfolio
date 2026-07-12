@@ -391,7 +391,7 @@ export const DATA = {
       title: "Techlaum Kalakkuvom – Kalloori Kalai Thiruvizha",
       issuer: "University College of Engineering, Kancheepuram (Anna University)",
       date: "2025-26",
-      credentialUrl: "https://drive.google.com/drive/folders/1A2MS8y1WMlpb5I5j1H3OYti4yeWwWDCt",
+      credentialUrl: "https://drive.google.com/file/d/1qkV5J3VFIk5P-rHrPpcmfks4wids8Nph/view?usp=sharing",
     },
     {
       title: "Data Analytics",
