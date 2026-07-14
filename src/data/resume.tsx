@@ -141,7 +141,7 @@ export const DATA = {
   projects: [
     {
       title: "SellerRocket - E-Commerce Seller Management Platform",
-      href: "https://sellerrocket-venkateswaran-77sc-m1g6ipzz9.vercel.app/",
+      href: "https://sellerrocket-venkateswaran.vercel.app/",
       dates: "Jun 2026 - Jun 2026",
       active: true,
       description:
