@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { Download, Eye } from "lucide-react";
 import { CertificateModal } from "@/components/ui/certificate-modal";
 
-const RESUME_URL = "/Venkateswaran_FSD_Resume.jpg";
+const RESUME_URL = "/Venkateswaran_FSD.jpg";
 
 const NAV_LINKS = [
   { label: "Home", href: "#hero" },
