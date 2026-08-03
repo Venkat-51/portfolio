@@ -6,7 +6,7 @@ import { CertificateModal } from "@/components/ui/certificate-modal";
 
 export function ResumeButtons() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const RESUME_URL = "/Venkateswaran_FSD.pdf";
+  const RESUME_URL = "/Venkateswaran_FSD.jpg";
 
   return (
     <>
