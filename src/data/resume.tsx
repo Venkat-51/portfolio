@@ -360,10 +360,10 @@ export const DATA = {
       start: "Aug 2025",
       end: "Aug 2025",
       description: [
-        "Built web applications using Python and Django Framework.",
-        "Developed authentication and CRUD functionalities.",
-        "Worked with HTML, CSS, JavaScript, SQLite, and Django ORM.",
-        "Improved backend development and full-stack development skills.",
+        "Developed a Student Portfolio Portal using Python, Django, HTML, CSS, and SQLite."
+        "Implemented secure student login to maintain personal and academic records."
+        "Built an admin panel for staff to view, edit, and manage student details."
+        "Digitized student records to reduce paperwork and enable faster information access.",
       ],
       certificateUrl: "/certificates/django-nexgen.jpg",
     },
