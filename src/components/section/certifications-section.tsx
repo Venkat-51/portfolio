@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { DATA } from "@/data/resume";
 import { Award, Calendar, ExternalLink } from "lucide-react";
+import { motion } from "motion/react";
 import BlurFade from "@/components/magicui/blur-fade";
 import { CertificateModal } from "@/components/ui/certificate-modal";
 
@@ -45,7 +46,11 @@ export default function CertificationsSection() {
               delay={BLUR_FADE_DELAY * 14 + id * 0.05}
               className="h-full"
             >
-              <div className="flex flex-col h-full border border-border bg-card rounded-xl p-5 hover:ring-2 hover:ring-muted transition-all duration-200 shadow-xs justify-between group">
+              <motion.div
+                whileHover={{ y: -5, scale: 1.01 }}
+                transition={{ duration: 0.25, ease: "easeOut" }}
+                className="flex flex-col h-full border border-border bg-card rounded-xl p-5 hover:border-primary/40 hover:shadow-lg transition-colors justify-between group"
+              >
                 <div className="flex flex-col gap-3">
                   <div className="flex items-center justify-between">
                     <div className="p-2 bg-primary/10 rounded-lg text-primary">
@@ -75,7 +80,7 @@ export default function CertificationsSection() {
                     <ExternalLink className="h-3 w-3" />
                   </button>
                 </div>
-              </div>
+              </motion.div>
             </BlurFade>
           ))}
         </div>

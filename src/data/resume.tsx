@@ -22,7 +22,7 @@ import { Antigravity } from "@/components/ui/svgs/antigravity";
 import { Sql } from "@/components/ui/svgs/sql";
 
 export const DATA = {
-  name: "Venkateswaran G",
+  name: "Venkateswaran G-Full Stack Developer",
   initials: "G",
   url: "https://venkateswarang.in",
   location: "Thanjavur, TamilNadu, India",

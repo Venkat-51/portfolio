@@ -3,6 +3,7 @@
 
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
+import { motion } from "motion/react";
 import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { useState, useEffect, useCallback } from "react";
@@ -124,9 +125,11 @@ export function ProjectCard({
     : [];
 
   return (
-    <div
+    <motion.div
+      whileHover={{ y: -6, scale: 1.01 }}
+      transition={{ duration: 0.25, ease: "easeOut" }}
       className={cn(
-        "flex flex-col h-full border border-border rounded-xl overflow-hidden hover:ring-2 cursor-pointer hover:ring-muted transition-all duration-200",
+        "flex flex-col h-full border border-border bg-card rounded-xl overflow-hidden hover:border-primary/40 hover:shadow-lg transition-colors cursor-pointer group",
         className
       )}
     >
@@ -207,6 +210,6 @@ export function ProjectCard({
           </div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 }

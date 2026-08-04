@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { motion } from "motion/react";
 import { Download, Eye } from "lucide-react";
 import { CertificateModal } from "@/components/ui/certificate-modal";
 
@@ -92,24 +93,32 @@ const RESUME_PREVIEW_URL = "/Venkateswaran_FSD.jpg";
          </button>
 
          {/* Desktop nav links */}
-         <nav className="hidden md:flex items-center gap-1">
-           {NAV_LINKS.map(({ label, href }) => {
-             const id = href.replace("#", "");
-             const isActive = active === id;
-             return (
-               <button
-                 key={href}
-                 onClick={() => handleClick(href)}
-                 className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 ${isActive
-                     ? "bg-primary text-primary-foreground"
-                     : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                   }`}
-               >
-                 {label}
-               </button>
-             );
-           })}
-         </nav>
+        <nav className="hidden md:flex items-center gap-1 relative">
+          {NAV_LINKS.map(({ label, href }) => {
+            const id = href.replace("#", "");
+            const isActive = active === id;
+            return (
+              <button
+                key={href}
+                onClick={() => handleClick(href)}
+                className={`relative px-3 py-1.5 rounded-lg text-sm font-medium transition-colors duration-200 ${
+                  isActive
+                    ? "text-primary-foreground"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                }`}
+              >
+                {isActive && (
+                  <motion.div
+                    layoutId="active-pill"
+                    className="absolute inset-0 bg-primary rounded-lg -z-10"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+                <span className="relative z-10">{label}</span>
+              </button>
+            );
+          })}
+        </nav>
 
          {/* Resume buttons (all screen sizes) */}
          <div className="flex items-center gap-2">

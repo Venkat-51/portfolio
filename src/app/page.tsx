@@ -12,6 +12,8 @@ import CertificationsSection from "@/components/section/certifications-section";
 import AchievementsSection from "@/components/section/achievements-section";
 import { ArrowUpRight } from "lucide-react";
 import { ResumeButtons } from "@/components/resume-buttons";
+import { AnimatedRole } from "@/components/animated-role";
+import { HeroAvatar } from "@/components/hero-avatar";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -31,13 +33,10 @@ export default function Page() {
               yOffset={8}
               text={`Hi, I'm Venkateswaran`}
             />
-            {/* Line 2: Roles */}
-            <BlurFadeText
-              delay={BLUR_FADE_DELAY * 2}
-              className="text-base font-semibold text-foreground/80 sm:text-xl lg:text-2xl tracking-tight"
-              yOffset={8}
-              text="Full Stack Web Developer | Java, Spring Boot & React | Python (Django) | 2026 Graduate"
-            />
+            {/* Line 2: Animated Roles */}
+            <BlurFade delay={BLUR_FADE_DELAY * 2}>
+              <AnimatedRole />
+            </BlurFade>
             {/* Line 3: Tagline */}
             <BlurFadeText
               delay={BLUR_FADE_DELAY * 3}
@@ -58,12 +57,9 @@ export default function Page() {
             </BlurFade>
           </div>
 
-          {/* Right Column: Hero Profile Image */}
+          {/* Right Column: Hero Profile Image with subtle float */}
           <BlurFade delay={BLUR_FADE_DELAY} className="order-1 md:order-2 flex justify-center md:justify-end">
-            <Avatar className="size-36 sm:size-48 md:size-64 lg:size-72 border-2 rounded-full shadow-2xl ring-4 ring-muted transition-transform duration-500 hover:scale-105">
-              <AvatarImage alt={DATA.name} src={DATA.avatarUrl} className="object-cover" />
-              <AvatarFallback className="text-3xl font-bold">{DATA.initials}</AvatarFallback>
-            </Avatar>
+            <HeroAvatar name={DATA.name} avatarUrl={DATA.avatarUrl} initials={DATA.initials} />
           </BlurFade>
         </div>
       </section>

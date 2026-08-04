@@ -1,4 +1,7 @@
+"use client";
+
 import { Trophy } from "lucide-react";
+import { motion } from "motion/react";
 import { DATA } from "@/data/resume";
 import BlurFade from "@/components/magicui/blur-fade";
 
@@ -30,14 +33,18 @@ export default function AchievementsSection() {
               key={achievement}
               delay={BLUR_FADE_DELAY * 5 + id * 0.05}
             >
-              <div className="flex items-center gap-4 p-4 rounded-xl border border-border bg-card hover:border-yellow-500/40 hover:shadow-[0_0_12px_rgba(250,204,21,0.08)] transition-all duration-300 group h-full">
+              <motion.div
+                whileHover={{ y: -5, scale: 1.01 }}
+                transition={{ duration: 0.25, ease: "easeOut" }}
+                className="flex items-center gap-4 p-4 rounded-xl border border-border bg-card hover:border-yellow-500/40 hover:shadow-[0_0_15px_rgba(250,204,21,0.12)] transition-colors group h-full cursor-default"
+              >
                 <div className="p-3 bg-yellow-500/10 dark:bg-yellow-500/15 text-yellow-500 rounded-lg group-hover:scale-110 transition-transform duration-300 shrink-0">
                   <Trophy className="h-5 w-5 fill-yellow-500/20" />
                 </div>
                 <p className="text-sm font-medium text-foreground tracking-tight leading-snug">
                   {achievement}
                 </p>
-              </div>
+              </motion.div>
             </BlurFade>
           ))}
         </div>
