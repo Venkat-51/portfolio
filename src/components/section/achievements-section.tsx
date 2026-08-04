@@ -24,7 +24,7 @@ export default function AchievementsSection() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-[800px] mx-auto w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full">
           {DATA.achievements.map((achievement, id) => (
             <BlurFade
               key={achievement}

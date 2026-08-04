@@ -5,11 +5,11 @@ import { Mail, Phone } from "lucide-react";
 
 export default function ContactSection() {
   return (
-    <div className="border rounded-xl p-6 sm:p-10 relative">
+    <div className="border rounded-2xl p-8 sm:p-14 relative w-full bg-card/50">
       <div className="absolute -top-4 border bg-primary z-10 rounded-xl px-4 py-1 left-1/2 -translate-x-1/2">
         <span className="text-background text-sm font-medium">Contact</span>
       </div>
-      <div className="absolute inset-0 top-0 left-0 right-0 h-1/2 rounded-xl overflow-hidden">
+      <div className="absolute inset-0 top-0 left-0 right-0 h-1/2 rounded-2xl overflow-hidden">
         <FlickeringGrid
           className="h-full w-full"
           squareSize={2}
@@ -20,14 +20,14 @@ export default function ContactSection() {
           }}
         />
       </div>
-      <div className="relative flex flex-col items-center gap-4 text-center">
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+      <div className="relative flex flex-col items-center gap-6 text-center w-full">
+        <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl lg:text-6xl">
           Get in Touch
         </h2>
-        <p className="mx-auto max-w-lg text-muted-foreground text-balance">
+        <p className="mx-auto max-w-3xl text-muted-foreground text-balance text-base sm:text-lg leading-relaxed">
           I am currently seeking full-time opportunities as a Full Stack Developer, with a focus on Java/Spring Boot and modern frontend technologies. As a recent Computer Science graduate, I am eager to contribute, learn, and grow with a dynamic team. If you have a suitable opportunity, I'd be happy to connect.
         </p>
-        <div className="flex flex-col sm:flex-row gap-3 mt-2 w-full max-w-md justify-center">
+        <div className="flex flex-col sm:flex-row gap-4 mt-4 w-full max-w-xl justify-center">
           <Link
             href={`mailto:${DATA.contact.email}`}
             className="flex items-center gap-3 px-5 py-3 rounded-xl border border-border bg-card hover:border-primary/50 hover:shadow-md transition-all duration-300 group flex-1 justify-center"

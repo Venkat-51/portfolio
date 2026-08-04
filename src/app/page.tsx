@@ -17,61 +17,65 @@ const BLUR_FADE_DELAY = 0.04;
 
 export default function Page() {
   return (
-    <main className="min-h-dvh flex flex-col gap-14 relative">
+    <main className="min-h-dvh flex flex-col gap-20 sm:gap-28 w-full relative">
       <meta name="google-site-verification" content="Rzn42okWNc1v5ACAaFYina86_t6EPsaL1baMAyHIiA0" />
-      <section id="hero">
-        <div className="mx-auto w-full max-w-2xl space-y-8">
-          <div className="gap-4 gap-y-6 flex flex-col md:flex-row justify-between">
-            <div className="flex flex-col order-2 md:order-1 gap-1.5">
-              {/* Line 1: Name */}
-              <BlurFadeText
-                delay={BLUR_FADE_DELAY}
-                className="text-3xl font-bold tracking-tighter sm:text-4xl lg:text-5xl"
-                yOffset={8}
-                text={`Hi, I'm Venkateswaran`}
-              />
-              {/* Line 2: Roles */}
-              <BlurFadeText
-                delay={BLUR_FADE_DELAY * 2}
-                className="text-base font-semibold text-foreground/80 sm:text-lg lg:text-xl tracking-tight"
-                yOffset={8}
-                text="Full Stack Web Developer | Java, Spring Boot & React | Python (Django) | 2026 Graduate"
-              />
-              {/* Line 3: Tagline */}
-              <BlurFadeText
-                delay={BLUR_FADE_DELAY * 3}
-                className="text-sm text-muted-foreground sm:text-base lg:text-lg max-w-[560px]"
-                yOffset={8}
-                text="Building scalable, real-world web applications with clean, efficient code — from backend APIs to responsive interfaces."
-              />
-              {/* Line 4: CTA */}
-              <BlurFadeText
-                delay={BLUR_FADE_DELAY * 4}
-                className="text-sm font-medium text-primary sm:text-base"
-                yOffset={8}
-                text="Open to Full-Time Full-Stack Web Developer Opportunities"
-              />
-              {/* Resume Buttons */}
-              <BlurFade delay={BLUR_FADE_DELAY * 5}>
-                <ResumeButtons />
-              </BlurFade>
-            </div>
-            <BlurFade delay={BLUR_FADE_DELAY} className="order-1 md:order-2">
-              <Avatar className="size-24 md:size-32 border rounded-full shadow-lg ring-4 ring-muted">
-                <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
-                <AvatarFallback>{DATA.initials}</AvatarFallback>
-              </Avatar>
+      
+      {/* ── HERO SECTION (100% FULL-WIDTH 2-COLUMN DESKTOP LAYOUT) ── */}
+      <section id="hero" className="w-full min-h-[calc(100vh-6rem)] flex items-center justify-center py-6 sm:py-12">
+        <div className="w-full grid grid-cols-1 md:grid-cols-[minmax(0,1.35fr)_minmax(300px,0.65fr)] gap-8 md:gap-12 lg:gap-16 items-center">
+          <div className="flex flex-col order-2 md:order-1 gap-3 sm:gap-4 max-w-4xl">
+            {/* Line 1: Name */}
+            <BlurFadeText
+              delay={BLUR_FADE_DELAY}
+              className="text-3xl font-bold tracking-tighter sm:text-5xl lg:text-6xl xl:text-7xl"
+              yOffset={8}
+              text={`Hi, I'm Venkateswaran`}
+            />
+            {/* Line 2: Roles */}
+            <BlurFadeText
+              delay={BLUR_FADE_DELAY * 2}
+              className="text-base font-semibold text-foreground/80 sm:text-xl lg:text-2xl tracking-tight"
+              yOffset={8}
+              text="Full Stack Web Developer | Java, Spring Boot & React | Python (Django) | 2026 Graduate"
+            />
+            {/* Line 3: Tagline */}
+            <BlurFadeText
+              delay={BLUR_FADE_DELAY * 3}
+              className="text-sm text-muted-foreground sm:text-lg lg:text-xl max-w-3xl leading-relaxed"
+              yOffset={8}
+              text="Building scalable, real-world web applications with clean, efficient code — from backend APIs to responsive interfaces."
+            />
+            {/* Line 4: CTA */}
+            <BlurFadeText
+              delay={BLUR_FADE_DELAY * 4}
+              className="text-sm font-semibold text-primary sm:text-lg"
+              yOffset={8}
+              text="Open to Full-Time Full-Stack Web Developer Opportunities"
+            />
+            {/* Resume Buttons */}
+            <BlurFade delay={BLUR_FADE_DELAY * 5}>
+              <ResumeButtons />
             </BlurFade>
           </div>
+
+          {/* Right Column: Hero Profile Image */}
+          <BlurFade delay={BLUR_FADE_DELAY} className="order-1 md:order-2 flex justify-center md:justify-end">
+            <Avatar className="size-36 sm:size-48 md:size-64 lg:size-72 border-2 rounded-full shadow-2xl ring-4 ring-muted transition-transform duration-500 hover:scale-105">
+              <AvatarImage alt={DATA.name} src={DATA.avatarUrl} className="object-cover" />
+              <AvatarFallback className="text-3xl font-bold">{DATA.initials}</AvatarFallback>
+            </Avatar>
+          </BlurFade>
         </div>
       </section>
-      <section id="about">
-        <div className="flex min-h-0 flex-col gap-y-4">
+
+      {/* ── ABOUT SECTION ── */}
+      <section id="about" className="w-full">
+        <div className="flex flex-col gap-y-4 w-full">
           <BlurFade delay={BLUR_FADE_DELAY * 3}>
-            <h2 className="text-xl font-bold">About</h2>
+            <h2 className="text-2xl font-bold tracking-tight">About</h2>
           </BlurFade>
           <BlurFade delay={BLUR_FADE_DELAY * 4}>
-            <div className="prose max-w-full text-pretty font-sans leading-relaxed text-muted-foreground dark:prose-invert">
+            <div className="prose max-w-4xl text-pretty font-sans leading-relaxed text-muted-foreground dark:prose-invert text-base sm:text-lg">
               <Markdown>
                 {DATA.summary}
               </Markdown>
@@ -79,49 +83,61 @@ export default function Page() {
           </BlurFade>
         </div>
       </section>
-      <section id="experience">
+
+      {/* ── EXPERIENCE SECTION ── */}
+      <section id="experience" className="w-full">
         <BlurFade delay={BLUR_FADE_DELAY * 7}>
           <ExperienceSection />
         </BlurFade>
       </section>
-      <section id="skills">
-        <div className="flex min-h-0 flex-col gap-y-4">
+
+      {/* ── SKILLS SECTION ── */}
+      <section id="skills" className="w-full">
+        <div className="flex flex-col gap-y-6 w-full">
           <BlurFade delay={BLUR_FADE_DELAY * 9}>
-            <h2 className="text-xl font-bold">Technical Skills</h2>
+            <h2 className="text-2xl font-bold tracking-tight">Technical Skills</h2>
           </BlurFade>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2.5 sm:gap-3">
             {DATA.skills.map((skill, id) => (
-              <BlurFade key={skill.name} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
-                <div className="border bg-background border-border ring-2 ring-border/20 rounded-xl h-8 w-fit px-4 flex items-center gap-2">
-                  {skill.icon && <skill.icon className="size-4 rounded overflow-hidden object-contain" />}
-                  <span className="text-foreground text-sm font-medium">{skill.name}</span>
+              <BlurFade key={skill.name} delay={BLUR_FADE_DELAY * 10 + id * 0.03}>
+                <div className="border bg-background border-border ring-2 ring-border/20 hover:border-primary/50 hover:ring-primary/20 transition-all duration-200 rounded-xl h-10 w-fit px-4 sm:px-5 flex items-center gap-2.5 shadow-xs">
+                  {skill.icon && <skill.icon className="size-4 sm:size-5 rounded overflow-hidden object-contain" />}
+                  <span className="text-foreground text-sm sm:text-base font-medium">{skill.name}</span>
                 </div>
               </BlurFade>
             ))}
           </div>
         </div>
       </section>
-      <section id="projects">
+
+      {/* ── PROJECTS SECTION ── */}
+      <section id="projects" className="w-full">
         <BlurFade delay={BLUR_FADE_DELAY * 12}>
           <ProjectsSection />
         </BlurFade>
       </section>
-      <section id="certifications">
+
+      {/* ── CERTIFICATIONS SECTION ── */}
+      <section id="certifications" className="w-full">
         <BlurFade delay={BLUR_FADE_DELAY * 14}>
           <CertificationsSection />
         </BlurFade>
       </section>
-      <section id="achievements">
+
+      {/* ── ACHIEVEMENTS SECTION ── */}
+      <section id="achievements" className="w-full">
         <BlurFade delay={BLUR_FADE_DELAY * 16}>
           <AchievementsSection />
         </BlurFade>
       </section>
-      <section id="education">
-        <div className="flex min-h-0 flex-col gap-y-6">
+
+      {/* ── EDUCATION SECTION ── */}
+      <section id="education" className="w-full">
+        <div className="flex flex-col gap-y-6 w-full">
           <BlurFade delay={BLUR_FADE_DELAY * 18}>
-            <h2 className="text-xl font-bold">Education</h2>
+            <h2 className="text-2xl font-bold tracking-tight">Education</h2>
           </BlurFade>
-          <div className="flex flex-col gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 w-full">
             {DATA.education.map((education, index) => (
               <BlurFade
                 key={education.school}
@@ -131,34 +147,34 @@ export default function Page() {
                   href={education.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-x-3 justify-between group"
+                  className="flex items-start gap-x-4 justify-between group p-5 border border-border rounded-2xl bg-card hover:border-primary/40 hover:shadow-md transition-all duration-300 h-full"
                 >
-                  <div className="flex items-center gap-x-3 flex-1 min-w-0">
+                  <div className="flex items-start gap-x-4 flex-1 min-w-0">
                     {education.logoUrl ? (
                       <img
                         src={education.logoUrl}
                         alt={education.school}
-                        className="size-8 md:size-10 p-1 border rounded-full shadow ring-2 ring-border overflow-hidden object-contain flex-none"
+                        className="size-10 sm:size-12 p-1 border rounded-full shadow ring-2 ring-border overflow-hidden object-contain flex-none mt-0.5"
                       />
                     ) : (
-                      <div className="size-8 md:size-10 p-1 border rounded-full shadow ring-2 ring-border bg-muted flex-none" />
+                      <div className="size-10 sm:size-12 p-1 border rounded-full shadow ring-2 ring-border bg-muted flex-none mt-0.5" />
                     )}
-                    <div className="flex-1 min-w-0 flex flex-col gap-0.5">
-                      <div className="font-semibold leading-none flex items-center gap-2">
+                    <div className="flex-1 min-w-0 flex flex-col gap-1">
+                      <div className="font-semibold text-base sm:text-lg leading-snug flex items-center gap-2 text-foreground group-hover:text-primary transition-colors">
                         {education.school}
-                        <ArrowUpRight className="h-3.5 w-3.5 text-muted-foreground opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" aria-hidden />
+                        <ArrowUpRight className="h-4 w-4 text-muted-foreground opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" aria-hidden />
                       </div>
-                      <div className="font-sans text-sm text-muted-foreground">
+                      <div className="font-sans text-sm sm:text-base text-muted-foreground">
                         {education.degree}
                       </div>
                       {"grade" in education && (
-                        <div className="text-xs font-medium text-emerald-500 dark:text-emerald-400">
+                        <div className="text-xs sm:text-sm font-semibold text-emerald-500 dark:text-emerald-400 mt-1">
                           📊 {education.grade}
                         </div>
                       )}
                     </div>
                   </div>
-                  <div className="flex items-center gap-1 text-xs tabular-nums text-muted-foreground text-right flex-none">
+                  <div className="flex items-center gap-1 text-xs sm:text-sm font-medium tabular-nums text-muted-foreground text-right flex-none pl-2">
                     <span>
                       {education.start} - {education.end}
                     </span>
@@ -169,7 +185,9 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section id="contact">
+
+      {/* ── CONTACT SECTION ── */}
+      <section id="contact" className="w-full">
         <BlurFade delay={BLUR_FADE_DELAY * 21}>
           <ContactSection />
         </BlurFade>

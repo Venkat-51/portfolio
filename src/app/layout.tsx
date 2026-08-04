@@ -90,7 +90,7 @@ export default function RootLayout({
               />
             </div>
             <TopNavbar />
-            <div className="relative z-10 max-w-2xl mx-auto pt-28 pb-24 sm:pt-24 sm:pb-24 px-6">
+            <div className="relative z-10 w-full min-h-screen pt-24 pb-24 px-[clamp(16px,4vw,64px)]">
               {children}
             </div>
             <Navbar />

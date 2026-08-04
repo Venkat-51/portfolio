@@ -81,7 +81,7 @@ const RESUME_URL = "/Venkateswaran_FSD.pdf";
          }`}
      >
        {/* ── Top bar ── */}
-       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
+       <div className="w-full px-[clamp(16px,4vw,64px)] h-14 flex items-center justify-between">
          {/* Logo */}
          <button
            onClick={() => handleClick("#hero")}
