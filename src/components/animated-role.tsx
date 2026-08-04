@@ -4,10 +4,10 @@ import { motion, AnimatePresence } from "motion/react";
 import { useState, useEffect } from "react";
 
 const ROLES = [
-  "Java Developer",
-  "Spring Boot Developer",
-  "React Developer",
-  "Python Developer",
+  "Java (Spring Boot)",
+  "React - Typescript",
+  "Python (Django)",
+  "2026 Graduate",
 ];
 
 export function AnimatedRole() {
