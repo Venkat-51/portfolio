@@ -126,22 +126,15 @@ export function CertificateModal({
               className="w-full h-full"
               onClick={(e) => e.stopPropagation()}
             >
-              <object
-                data={`${url}#toolbar=0`}
-                type="application/pdf"
-                className="w-full h-full rounded-md"
-              >
-                <embed
-                  src={`${url}#toolbar=0`}
-                  type="application/pdf"
-                  className="w-full h-full rounded-md"
-                />
-                <iframe
-                  src={`${url}#toolbar=0`}
-                  className="w-full h-full border-none rounded-md"
-                  title={title}
-                />
-              </object>
+              <iframe
+                src={`https://docs.google.com/gview?url=${encodeURIComponent(
+                  typeof window !== "undefined"
+                    ? new URL(url, window.location.origin).href
+                    : url
+                )}&embedded=true`}
+                className="w-full h-full border-none rounded-md"
+                title={title}
+              />
             </div>
           ) : (
             <div 
