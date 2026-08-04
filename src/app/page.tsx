@@ -20,8 +20,8 @@ export default function Page() {
     <main className="min-h-dvh flex flex-col gap-20 sm:gap-28 w-full relative">
       <meta name="google-site-verification" content="Rzn42okWNc1v5ACAaFYina86_t6EPsaL1baMAyHIiA0" />
       
-      {/* ── HERO SECTION (100% FULL-WIDTH 2-COLUMN DESKTOP LAYOUT) ── */}
-      <section id="hero" className="w-full min-h-[calc(100vh-6rem)] flex items-center justify-center py-6 sm:py-12">
+      {/* ── HERO SECTION ── */}
+      <section id="hero" className="w-full md:min-h-[calc(100vh-6rem)] flex items-center justify-center py-2 sm:py-12">
         <div className="w-full grid grid-cols-1 md:grid-cols-[minmax(0,1.35fr)_minmax(300px,0.65fr)] gap-8 md:gap-12 lg:gap-16 items-center">
           <div className="flex flex-col order-2 md:order-1 gap-3 sm:gap-4 max-w-4xl">
             {/* Line 1: Name */}
