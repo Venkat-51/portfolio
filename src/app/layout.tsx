@@ -29,9 +29,9 @@ export const metadata: Metadata = {
   },
   description: DATA.description,
   icons: {
-    icon: "/icon.png",
-    shortcut: "/icon.png",
-    apple: "/icon.png",
+    icon: "/Vk.png",
+    shortcut: "/Vk.png",
+    apple: "/Vk.png",
   },
   openGraph: {
     title: `${DATA.name}`,
