@@ -126,11 +126,22 @@ export function CertificateModal({
               className="w-full h-full"
               onClick={(e) => e.stopPropagation()}
             >
-              <iframe
-                src={`${url}#toolbar=0`}
-                className="w-full h-full border-none rounded-md"
-                title={title}
-              />
+              <object
+                data={`${url}#toolbar=0`}
+                type="application/pdf"
+                className="w-full h-full rounded-md"
+              >
+                <embed
+                  src={`${url}#toolbar=0`}
+                  type="application/pdf"
+                  className="w-full h-full rounded-md"
+                />
+                <iframe
+                  src={`${url}#toolbar=0`}
+                  className="w-full h-full border-none rounded-md"
+                  title={title}
+                />
+              </object>
             </div>
           ) : (
             <div 
