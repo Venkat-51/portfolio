@@ -4,7 +4,8 @@ import { useState, useEffect, useRef } from "react";
 import { Download, Eye } from "lucide-react";
 import { CertificateModal } from "@/components/ui/certificate-modal";
 
-const RESUME_URL = "/Venkateswaran_FSD.pdf";
+const RESUME_PDF_URL = "/Venkateswaran_FSD.pdf";
+const RESUME_PREVIEW_URL = "/Venkateswaran_FSD.jpg";
  
  const NAV_LINKS = [
    { label: "Home", href: "#hero" },
@@ -113,7 +114,7 @@ const RESUME_URL = "/Venkateswaran_FSD.pdf";
          {/* Resume buttons (all screen sizes) */}
          <div className="flex items-center gap-2">
            <a
-             href={RESUME_URL}
+             href={RESUME_PDF_URL}
              download="Venkateswaran_FSD.pdf"
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 active:scale-95 transition-all duration-200 shadow-sm"
           >
@@ -162,7 +163,7 @@ const RESUME_URL = "/Venkateswaran_FSD.pdf";
       <CertificateModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        url={RESUME_URL}
+        url={RESUME_PREVIEW_URL}
         title="Resume Preview"
       />
     </header>
