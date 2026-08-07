@@ -13,6 +13,7 @@ const RESUME_PREVIEW_URL = "/Venkateswaran_FSD.jpg";
    { label: "Experience", href: "#experience" },
    { label: "Skills", href: "#skills" },
    { label: "Projects", href: "#projects" },
+   { label: "Services", href: "#services" },
    { label: "Certifications", href: "#certifications" },
    { label: "Achievements", href: "#achievements" },
    { label: "Education", href: "#education" },

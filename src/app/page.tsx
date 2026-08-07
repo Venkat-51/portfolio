@@ -7,6 +7,7 @@ import Link from "next/link";
 import Markdown from "react-markdown";
 import ContactSection from "@/components/section/contact-section";
 import ProjectsSection from "@/components/section/projects-section";
+import ServicesSection from "@/components/section/services-section";
 import ExperienceSection from "@/components/section/experience-section";
 import CertificationsSection from "@/components/section/certifications-section";
 import AchievementsSection from "@/components/section/achievements-section";
@@ -45,12 +46,20 @@ export default function Page() {
               text="Building scalable, real-world web applications with clean, efficient code — from backend APIs to responsive interfaces."
             />
             {/* Line 4: CTA */}
-            <BlurFadeText
-              delay={BLUR_FADE_DELAY * 4}
-              className="text-sm font-semibold text-primary sm:text-lg"
-              yOffset={8}
-              text="Open to Full-Time Full-Stack Web Developer Opportunities"
-            />
+            <div className="flex flex-col gap-1">
+              <BlurFadeText
+                delay={BLUR_FADE_DELAY * 4}
+                className="text-sm font-semibold text-primary sm:text-lg"
+                yOffset={8}
+                text="Open to Full-Time Full-Stack Web Developer Opportunities"
+              />
+              <BlurFadeText
+                delay={BLUR_FADE_DELAY * 4.5}
+                className="text-xs text-muted-foreground sm:text-sm font-medium"
+                yOffset={8}
+                text="Also available for selected freelance and small-business web development projects."
+              />
+            </div>
             {/* Resume Buttons */}
             <BlurFade delay={BLUR_FADE_DELAY * 5}>
               <ResumeButtons />
@@ -110,6 +119,13 @@ export default function Page() {
       <section id="projects" className="w-full">
         <BlurFade delay={BLUR_FADE_DELAY * 12}>
           <ProjectsSection />
+        </BlurFade>
+      </section>
+
+      {/* ── SERVICES SECTION ── */}
+      <section id="services" className="w-full">
+        <BlurFade delay={BLUR_FADE_DELAY * 13}>
+          <ServicesSection />
         </BlurFade>
       </section>
 

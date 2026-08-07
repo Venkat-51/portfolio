@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { FlickeringGrid } from "@/components/magicui/flickering-grid";
 import { DATA } from "@/data/resume";
-import { Mail, Phone } from "lucide-react";
+import { Mail, Phone, Briefcase, MessageSquareCode } from "lucide-react";
 
 export default function ContactSection() {
   return (
@@ -22,12 +22,57 @@ export default function ContactSection() {
       </div>
       <div className="relative flex flex-col items-center gap-6 text-center w-full">
         <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl lg:text-6xl">
-          Get in Touch
+          Let&apos;s Work Together
         </h2>
         <p className="mx-auto max-w-3xl text-muted-foreground text-balance text-base sm:text-lg leading-relaxed">
-          I am currently seeking full-time opportunities as a Full Stack Developer, with a focus on Java/Spring Boot and modern frontend technologies. As a recent Computer Science graduate, I am eager to contribute, learn, and grow with a dynamic team. If you have a suitable opportunity, I'd be happy to connect.
+          I&apos;m open to full-time software development opportunities and selected freelance web development projects.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 mt-4 w-full max-w-xl justify-center">
+
+        {/* Two distinct options for Recruiters vs Clients */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2 w-full max-w-2xl text-left">
+          <Link
+            href={`mailto:${DATA.contact.email}?subject=Career%20/%20Job%20Opportunity`}
+            className="flex items-start gap-4 p-5 rounded-2xl border border-border bg-card hover:border-primary/50 hover:shadow-md transition-all duration-300 group"
+          >
+            <div className="p-3 bg-primary/10 rounded-xl text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 shrink-0">
+              <Briefcase className="h-6 w-6" />
+            </div>
+            <div className="flex flex-col gap-1">
+              <span className="text-xs text-primary font-semibold uppercase tracking-wider">
+                Recruiters & Hiring
+              </span>
+              <h3 className="text-base font-bold text-foreground group-hover:text-primary transition-colors">
+                Career / Job Opportunity
+              </h3>
+              <p className="text-xs text-muted-foreground">
+                Discuss full-time Full-Stack Developement roles.
+              </p>
+            </div>
+          </Link>
+
+          <Link
+            href={`mailto:${DATA.contact.email}?subject=Discuss%20a%20Web%20Project`}
+            className="flex items-start gap-4 p-5 rounded-2xl border border-border bg-card hover:border-primary/50 hover:shadow-md transition-all duration-300 group"
+          >
+            <div className="p-3 bg-primary/10 rounded-xl text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 shrink-0">
+              <MessageSquareCode className="h-6 w-6" />
+            </div>
+            <div className="flex flex-col gap-1">
+              <span className="text-xs text-primary font-semibold uppercase tracking-wider">
+                Freelance & Clients
+              </span>
+              <h3 className="text-base font-bold text-foreground group-hover:text-primary transition-colors">
+                Discuss a Web Project
+              </h3>
+              <p className="text-xs text-muted-foreground">
+                Share details for custom website or application development.
+              </p>
+            </div>
+          </Link>
+        </div>
+
+        {/* Direct Contact Info */}
+        <div className="flex flex-col sm:flex-row gap-4 mt-2 w-full max-w-xl justify-center">
           <Link
             href={`mailto:${DATA.contact.email}`}
             className="flex items-center gap-3 px-5 py-3 rounded-xl border border-border bg-card hover:border-primary/50 hover:shadow-md transition-all duration-300 group flex-1 justify-center"
