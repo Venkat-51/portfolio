@@ -1,7 +1,7 @@
 "use client";
 
 import BlurFade from "@/components/magicui/blur-fade";
-import { motion } from "motion/react";
+import { motion, useReducedMotion, Variants } from "motion/react";
 import {
   User,
   Building2,
@@ -74,6 +74,152 @@ const SERVICES = [
   },
 ];
 
+function MobileServiceCard({
+  service,
+  index,
+  onDiscussProject,
+}: {
+  service: (typeof SERVICES)[number];
+  index: number;
+  onDiscussProject: () => void;
+}) {
+  const shouldReduceMotion = useReducedMotion();
+  const Icon = service.icon;
+  const numStr = String(index + 1).padStart(2, "0");
+
+  const cardVariants: Variants = {
+    hidden: shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
+
+  const iconVariants: Variants = {
+    hidden: shouldReduceMotion
+      ? { opacity: 1, scale: 1 }
+      : { opacity: 0, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.4, ease: "easeOut", delay: 0.08 },
+    },
+  };
+
+  const titleVariants: Variants = {
+    hidden: shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.4, ease: "easeOut", delay: 0.12 },
+    },
+  };
+
+  const descVariants: Variants = {
+    hidden: shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.4, ease: "easeOut", delay: 0.16 },
+    },
+  };
+
+  const featureItemVariants: Variants = {
+    hidden: shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.3, ease: "easeOut", delay: 0.2 + i * 0.04 },
+    }),
+  };
+
+  const ctaVariants: Variants = {
+    hidden: shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.4, ease: "easeOut", delay: 0.35 },
+    },
+  };
+
+  return (
+    <motion.div
+      initial={shouldReduceMotion ? false : "hidden"}
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.15 }}
+      variants={cardVariants}
+      className="w-[calc(100%-32px)] mx-auto flex flex-col border border-border bg-card rounded-2xl p-6 shadow-xs hover:border-primary/40 transition-colors h-auto overflow-visible"
+    >
+      {/* Number Badge & Icon Row */}
+      <div className="flex items-center justify-between mb-4">
+        <motion.span
+          variants={titleVariants}
+          className="text-2xl font-bold font-mono text-primary/60 tracking-wider"
+        >
+          {numStr}
+        </motion.span>
+        <motion.div
+          variants={iconVariants}
+          className="p-3 bg-primary/10 rounded-xl text-primary flex items-center justify-center"
+        >
+          <Icon className="h-6 w-6" />
+        </motion.div>
+      </div>
+
+      {/* Title */}
+      <motion.h3
+        variants={titleVariants}
+        className="font-bold text-xl leading-snug text-foreground mb-2"
+      >
+        {service.title}
+      </motion.h3>
+
+      {/* Description */}
+      <motion.p
+        variants={descVariants}
+        className="text-sm text-muted-foreground leading-relaxed mb-5"
+      >
+        {service.description}
+      </motion.p>
+
+      {/* Features List */}
+      <div className="pt-4 border-t border-border/40 mb-6">
+        <motion.p
+          variants={descVariants}
+          className="text-xs font-semibold text-foreground/80 uppercase tracking-wider mb-3"
+        >
+          Features:
+        </motion.p>
+        <ul className="space-y-2">
+          {service.features.map((feature, idx) => (
+            <motion.li
+              key={feature}
+              custom={idx}
+              variants={featureItemVariants}
+              className="text-sm text-muted-foreground flex items-start gap-2 font-medium"
+            >
+              <CheckCircle2 className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+              <span>{feature}</span>
+            </motion.li>
+          ))}
+        </ul>
+      </div>
+
+      {/* CTA Button */}
+      <motion.div variants={ctaVariants} className="mt-auto pt-2">
+        <button
+          onClick={onDiscussProject}
+          className="w-full py-3 px-4 rounded-xl bg-primary text-primary-foreground font-medium text-sm hover:bg-primary/90 active:scale-[0.98] transition-all duration-200 shadow-xs flex items-center justify-center gap-2 cursor-pointer"
+        >
+          <span>Discuss Your Project</span>
+          <ArrowRight className="h-4 w-4" />
+        </button>
+      </motion.div>
+    </motion.div>
+  );
+}
+
 export default function ServicesSection() {
   const handleDiscussProject = () => {
     const el = document.querySelector("#contact");
@@ -105,8 +251,8 @@ export default function ServicesSection() {
           </div>
         </div>
 
-        {/* 4 Services Grid: 1 col mobile, 2 cols tablet (md), 4 cols desktop (lg) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full auto-rows-fr">
+        {/* Desktop Services Grid (md breakpoint and above) */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 w-full auto-rows-fr">
           {SERVICES.map((service, id) => {
             const Icon = service.icon;
             return (
@@ -160,8 +306,20 @@ export default function ServicesSection() {
           })}
         </div>
 
-        {/* Services CTA Banner */}
-        <BlurFade delay={BLUR_FADE_DELAY * 15}>
+        {/* Mobile Services List (below md breakpoint) */}
+        <div className="flex md:hidden flex-col gap-6 w-full">
+          {SERVICES.map((service, index) => (
+            <MobileServiceCard
+              key={service.id}
+              service={service}
+              index={index}
+              onDiscussProject={handleDiscussProject}
+            />
+          ))}
+        </div>
+
+        {/* Desktop Services CTA Banner */}
+        <BlurFade delay={BLUR_FADE_DELAY * 15} className="hidden md:block">
           <div className="mt-4 border border-border rounded-2xl p-6 sm:p-8 bg-card/60 flex flex-col sm:flex-row items-center justify-between gap-6 hover:border-primary/40 transition-all duration-300 shadow-xs">
             <div className="flex flex-col gap-1 text-center sm:text-left">
               <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-foreground">
@@ -184,3 +342,4 @@ export default function ServicesSection() {
     </section>
   );
 }
+
